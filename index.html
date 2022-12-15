@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- добавим стили mocha, для отрбражения результатов -->
+  <!-- добавим стили mocha для отображения результатов -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
   <!-- добавляем сам фреймворк mocha -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
@@ -20,15 +20,18 @@
 <body>
 
   <script>
-function pow(x, n) {
-  let result = 1;
+    function pow(x, n) {
+      if (n < 0) return NaN;
+      if (Math.round(n) != n) return NaN;
 
-  for (let i = 0; i < n; i++) {
-    result *= x;
-  }
+      let result = 1;
 
-  return result;
-}
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+
+      return result;
+    }
   </script>
 
   <!-- скрипт со спецификацией (describe, it...) -->
